@@ -127,4 +127,14 @@ function playerStats(playerInput) {
   }
 }
 
-function bigShoeRebounds() {}
+function bigShoeRebounds() {
+  const playersInfo = Object.values(playersObject());
+  const biggestShoe = playersInfo.reduce((p1, p2) => {
+    if (p1.shoe > p2.shoe) {
+      return p1;
+    } else {
+      return p2;
+    }
+  });
+  return biggestShoe.rebounds;
+}
